@@ -1,0 +1,16 @@
+<f:layout name="Default"/>
+
+<f:section name="main">
+
+    <f:flashMessages/>
+
+    <div class="tx_dfkistaffdb_publication_list">
+        <!--TYPO3SEARCH_end-->
+        <h1>
+            <f:translate key="tx_dfki_staff_db_publication_list.header"/>
+        </h1>
+        <f:render partial="Publication/List" arguments="{_all}" />
+        <!--TYPO3SEARCH_begin-->
+    </div>
+
+</f:section>

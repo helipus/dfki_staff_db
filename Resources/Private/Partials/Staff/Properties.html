@@ -1,0 +1,298 @@
+{namespace vhs=FluidTYPO3\Vhs\ViewHelpers}
+{namespace dfki=DFKI\DfkiStaffDb\ViewHelpers}
+
+<div class="tx-dfki-staff-db-show">
+    <f:if condition="{0:staff.uid} == {0:'frki01'}">
+        <div class="kirchner">
+            <f:comment><![CDATA[<vhs:content.render pageUid="266"/>]]></f:comment>
+            <vhs:page.menu pageUid="266"/>
+        </div>
+    </f:if>
+
+    <div class="business-card">
+
+        <header class="csc-header">
+            <h2>
+                {staff.title_name_long}
+            </h2>
+        </header>
+
+        <div class="row">
+            <div class="fourcol">
+                <vhs:media.exists then='<img src="/uploads/tx_dfkistaffdb/170x255/{staff.uid}.jpg"/>'
+                                  else='<img src="/uploads/tx_dfkistaffdb/170x255/dummy.jpg"/>'
+                                  file= 'uploads/tx_dfkistaffdb/170x255/{staff.uid}.jpg' />
+
+            </div>
+            <div class="eightcol last">
+                <table>
+                    <tr>
+                        <td class="label">
+                            <f:translate key="tx_dfki_staff_db_show.organisation"/>
+                            :
+                        </td>
+                        <td>
+                            <f:format.html parseFuncTSPath="">{staff.organisationLong}</f:format.html>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">
+                            <f:if condition="<f:count subject='{staff.orgaunits}' /> > 1">
+                                <f:then>
+                                    <f:translate key="tx_dfki_staff_db_show.orgaunits"/>
+                                    :
+                                </f:then>
+                                <f:else>
+                                    <f:translate key="tx_dfki_staff_db_show.orgaunit"/>
+                                    :
+                                </f:else>
+                            </f:if>
+                        </td>
+                        <td>
+                            <f:for each="{staff.orgaunits}" as="orgaunit" iteration="i">
+                                {orgaunit}{f:if(condition:i.isLast, then:'', else:'<br/> ')}
+                            </f:for>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">
+                            <f:translate key="tx_dfki_staff_db_show.status"/>
+                            :
+                        </td>
+                        <td>
+                            <f:if condition="{0:staff.employeeType,1:staff.orgaunitnameLeaderPrefix} == {0:3,1:1}">
+                                <f:then>
+                                    <f:if condition="{0:staff.uid} == {0:'frki01'}">
+                                        <f:then>
+                                            <f:format.html parseFuncTSPath="">{staff.orgaunitname}</f:format.html>
+                                        </f:then>
+                                        <f:else>
+                                            <f:translate key="tx_dfki_staff_db_show.status.3"/>
+                                            <f:format.html parseFuncTSPath="">{staff.orgaunitname}</f:format.html>
+                                        </f:else>
+                                    </f:if>
+                                </f:then>
+                                <f:else>
+                                  <f:if condition="{0:staff.employeeType,1:staff.orgaunitnameLeaderPrefix} == {0:3,1:0}">
+                                    <f:then>
+                                        <f:translate key="tx_dfki_staff_db_show.status.{staff.orgaunitname}"/>
+                                    </f:then>
+                                    <f:else>
+                                        <f:format.html parseFuncTSPath="">{staff.description2}</f:format.html>
+                                    </f:else>
+                                  </f:if>
+                                </f:else>
+                            </f:if>
+                        </td>
+                    </tr>
+                    <tr><td colspan="2"></td> </tr>
+                    <tr><td colspan="2"></td> </tr>
+
+
+                    <f:for each="{contactDetails}" as="contactDetail" iteration="iter">
+                        <f:if condition="{contactDetail.room}">
+                            <tr>
+                                <td class="label">
+                                    <f:translate key="tx_dfki_staff_db_show.room"/> {contactDetail.location}
+                                    :
+                                </td>
+                                <td>
+                                    {contactDetail.room}
+                                </td>
+                            </tr>
+                        </f:if>
+                        <tr>
+                            <td class="label">
+                                <f:translate key="tx_dfki_staff_db_show.address"/> {contactDetail.location}
+                                :
+                            </td>
+                            <td>
+                                <f:if condition="{0:contactDetail.building} == {0:'RH1-M (Explorationshalle)'}">
+                                    <f:then>
+                                        Robert-Hooke-Str. 1<br/>28359 Bremen
+                                    </f:then>
+                                </f:if>
+                                <f:if condition="{0:contactDetail.building} == {0:'RH1-A (Bürogebäude)'}">
+                                    <f:then>
+                                        Robert-Hooke-Str. 1<br/>28359 Bremen
+                                    </f:then>
+                                </f:if>
+                                <f:if condition="{0:contactDetail.building} == {0:'RH1'}">
+                                    <f:then>
+                                        Robert-Hooke-Str. 1<br/>28359 Bremen
+                                    </f:then>
+                                </f:if>
+                                <f:if condition="{0:contactDetail.building} == {0:''}">
+                                    <f:then>
+                                        Robert-Hooke-Str. 1<br/>28359 Bremen
+                                    </f:then>
+                                </f:if>
+                                <f:if condition="{0:contactDetail.building} == {0:'RH5'}">
+                                    <f:then>
+                                        Robert-Hooke-Str. 5<br/>28359 Bremen
+                                    </f:then>
+                                </f:if>
+                                <f:if condition="{0:contactDetail.building} == {0:'Unicom'}">
+                                    <f:then>
+                                        Mary-Somerville-Str. 9<br/>28359 Bremen
+                                    </f:then>
+                                </f:if>
+                                <f:if condition="{0:contactDetail.building} == {0:'Cartesium'}">
+                                    <f:then>
+                                        Enrique-Schmidt-Str. 5<br/>28359 Bremen
+                                    </f:then>
+                                </f:if>
+                                <f:if condition="{0:contactDetail.building} == {0:'31 (Westerberg)'}">
+                                    <f:then>
+                                        AVZ-Gebäude, Gebäudenr. 31<br/> Albrechtstraße 28<br/>49076 Osnabrück
+                                    </f:then>
+                                </f:if>
+                                <f:if condition="{0:contactDetail.building} == {0:'ICO InnovationsCentrum'}">
+                                    <f:then>
+                                        ICO InnovationsCentrum<br/>Albert-Einstein-Straße 1<br/>D-49076 Osnabrück
+                                    </f:then>
+                                </f:if>
+                                <f:if condition="{0:contactDetail.building} == {0:'Projektbüro'}">
+                                    <f:then>
+                                        DFKI Projektbüro Berlin<br/>Alt-Moabit 91c<br/>D-10559 Berlin
+                                    </f:then>
+                                </f:if>
+                            </td>
+                        </tr>
+
+                        <f:if condition="{0:contactDetail.building} == {0:'RH5'}">
+                            <f:then>
+                                <tr>
+                                    <td class="label">
+                                        <f:translate key="tx_dfki_staff_db_show.letteraddress"/> {contactDetail.location}
+                                        :
+                                    </td>
+                                    <td>
+                                        Robert-Hooke-Str. 1<br/>28359 Bremen
+                                    </td>
+                                </tr>
+                            </f:then>
+                        </f:if>
+                        <tr><td colspan="2"></td> </tr>
+                        <tr><td colspan="2"></td> </tr>
+                    </f:for>
+
+                    <f:for each="{contactDetails}" as="contactDetail" iteration="iter">
+                        <f:if condition="{contactDetail.phone}">
+                            <tr>
+                                <td class="label">
+                                    <f:translate key="tx_dfki_staff_db_show.phone"/> {contactDetail.location}
+                                    :
+                                </td>
+                                <td>
+                                    {contactDetail.phone}
+                                </td>
+                            </tr>
+                        </f:if>
+
+                        <f:if condition="{contactDetail.fax}">
+                            <tr>
+                                <td class="label">
+                                    <f:translate key="tx_dfki_staff_db_show.fax"/>
+                                    :
+                                </td>
+                                <td>
+                                    {contactDetail.fax}
+                                </td>
+                            </tr>
+                        </f:if>
+                    </f:for>
+
+                    <f:if condition="{staff.skype}">
+                        <tr>
+                            <td class="label">
+                                <f:translate key="tx_dfki_staff_db_show.skype"/>
+                                :
+                            </td>
+                            <td>
+                                {staff.skype}
+                            </td>
+                        </tr>
+                    </f:if>
+
+                    <f:if condition="{staff.mail}">
+                        <tr>
+                            <td class="label">
+                                <f:translate key="tx_dfki_staff_db_show.mail"/>
+                                :
+                            </td>
+                            <td>
+                                <f:link.email email="{staff.mail}">{staff.mail}</f:link.email>
+                            </td>
+                        </tr>
+                    </f:if>
+
+                    <f:if condition="{staff.homepage}">
+                        <tr>
+                            <td class="label">
+                                <f:translate key="tx_dfki_staff_db_show.homepage"/>
+                                :
+                            </td>
+                            <td>
+                                <f:comment>02.07.2014: Hier werden nur gefilterte Homepagelinks angezeigt. Der Filter ist in StaffController.php definiert</f:comment>
+                                <f:link.external uri="{staff.homepage}" target="_blank">{staff.homepage}
+                                </f:link.external>
+                            </td>
+                        </tr>
+                    </f:if>
+
+                    <f:comment>
+                        02.09.2016: Wenn im folgenden Ordner ein PDF mit der Namen der myDFKI Kennung des Benutzers liegt, dann wird es angezeigt:
+                        /webseiten/typo3_main/www/fileadmin/content/ric/about/staff/cv/cv_[myDFKI-Kennung.pdf]
+                        Bsp für Veit Briken:
+                        /webseiten/typo3_main/www/fileadmin/content/ric/about/staff/cv/cv_vebr01.pdf
+                    </f:comment>
+                    <vhs:media.exists file="fileadmin/content/ric/about/staff/cv/cv_{staff.uid}.pdf">
+                        <f:then>
+                            <tr>
+                                <td class="label">
+                                    <f:translate key="tx_dfki_staff_db_show.cv"/>:
+                                </td>
+                                <td>
+                                    <f:link.page pageUid="fileadmin/content/ric/about/staff/cv/cv_{staff.uid}.pdf">
+                                        <f:translate key="tx_dfki_staff_db_show.cv.download"/>
+                                    </f:link.page>
+                                </td>
+                            </tr>
+                        </f:then>
+                        <f:else>
+                        </f:else>
+                    </vhs:media.exists>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <br/>
+
+
+    <br/>
+
+    <f:if condition="<f:count subject='{publications}' /> > 0">
+        <h3>
+            <f:translate key="tx_dfki_staff_db_show.header.publication"/>
+        </h3>
+    </f:if>
+
+    <div class="staff-publications">
+        <f:groupedFor each="{publications}" as="pubsGrouped" groupBy="year" groupKey="year">
+            <f:if condition="{year}">
+                <h3>{year}</h3>
+            </f:if>
+            <f:for each="{pubsGrouped}" as="pub" iteration="i">
+                <div class="publication {f:if(condition:i.isOdd, then:'odd', else:'even')}">
+                    <dfki:publication pub="{pub}" />
+                </div>
+            </f:for>
+            <br/><br/>
+        </f:groupedFor>
+    </div>
+
+</div>

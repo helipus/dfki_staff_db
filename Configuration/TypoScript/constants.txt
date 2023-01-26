@@ -1,0 +1,14 @@
+plugin.tx_dfkistaffdb {
+	view {
+		# cat=plugin.tx_dfkistaffdb/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:dfki_staff_db/Resources/Private/Templates/
+		# cat=plugin.tx_dfkistaffdb/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:dfki_staff_db/Resources/Private/Partials/
+		# cat=plugin.tx_dfkistaffdb/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:dfki_staff_db/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_dfkistaffdb//a; type=string; label=Default storage PID
+		storagePid = 
+	}
+}

@@ -1,0 +1,49 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+
+<f:flashMessages />
+
+<div class="tx_dfkistaffdb_list2">
+<!--TYPO3SEARCH_end-->
+  <h1><f:translate key="tx_dfki_staff_db_list2.header" /></h1>
+  
+  <f:if condition="{staffDirector}">
+      <h2><f:translate key="tx_dfki_staff_db_list.header.staffDirector" /></h2>
+      <f:render partial="Staff/List2" arguments="{staffs:staffDirector}" />
+      <br />
+  </f:if>  
+  
+  <f:if condition="{staffEmployees}">
+      <h2><f:translate key="tx_dfki_staff_db_list.header.staffEmployees" /></h2>
+      <f:render partial="Staff/List2" arguments="{staffs:staffEmployees}" />
+      <br />
+  </f:if>  
+  
+  <f:if condition="{staffGuestResearchers}">
+      <h2><f:translate key="tx_dfki_staff_db_list.header.staffGuestResearchers" /></h2>
+      <f:render partial="Staff/List2" arguments="{staffs:staffGuestResearchers}" />
+      <br />
+  </f:if>  
+  
+  <f:if condition="{staffTrainees}">
+      <h2><f:translate key="tx_dfki_staff_db_list.header.staffTrainees" /></h2>
+      <f:render partial="Staff/List2" arguments="{staffs:staffTrainees}" />
+      <br />
+  </f:if>    
+
+  <f:if condition="{staffAssistants}">
+      <h2><f:translate key="tx_dfki_staff_db_list.header.staffAssistants" /></h2>
+      <f:render partial="Staff/List2" arguments="{staffs:staffAssistants}" />
+      <br />
+  </f:if>  
+  
+  <f:if condition="{staffInterns}">
+      <h2><f:translate key="tx_dfki_staff_db_list.header.staffInterns" /></h2>
+      <f:render partial="Staff/List2" arguments="{staffs:staffInterns}" />
+  </f:if>  
+  
+<!--TYPO3SEARCH_begin-->
+</div>
+
+</f:section>

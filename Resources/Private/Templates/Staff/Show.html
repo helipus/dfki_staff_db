@@ -1,0 +1,11 @@
+<f:layout name="Default"/>
+
+<f:section name="main">
+    <f:flashMessages/>
+    <f:render partial="Staff/Properties" arguments="{_all}"/>
+    <br/>
+    <f:link.action pageUid="172" controller="Staff" action="list">
+        <f:translate key="tx_dfki_staff_db_show.backlink"/>
+    </f:link.action>
+    <br/>
+</f:section>

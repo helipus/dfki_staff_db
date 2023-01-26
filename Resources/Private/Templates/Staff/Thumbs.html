@@ -1,0 +1,21 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+
+<f:flashMessages />
+
+<div class="tx_dfkistaffdb_thumbs">
+<!--TYPO3SEARCH_end-->
+  <h1><f:translate key="tx_dfki_staff_db_thumbs.header" /></h1>
+  
+  <f:render partial="Staff/Thumbs" arguments="{staffs:staffDirector}" />
+  <f:render partial="Staff/Thumbs" arguments="{staffs:staffEmployees}" />
+  <f:render partial="Staff/Thumbs" arguments="{staffs:staffGuestResearchers}" />
+  <f:render partial="Staff/Thumbs" arguments="{staffs:staffTrainees}" />
+  <f:render partial="Staff/Thumbs" arguments="{staffs:staffAssistants}" />
+  <f:render partial="Staff/Thumbs" arguments="{staffs:staffInterns}" />
+  <div class="clearfloat"></div>
+<!--TYPO3SEARCH_begin-->
+</div>
+
+</f:section>

@@ -1,0 +1,15 @@
+{namespace dfki=DFKI\DfkiStaffDb\ViewHelpers}
+               
+<div class="publications">
+    <f:groupedFor each="{publications}" as="pubsGrouped" groupBy="year" groupKey="year">
+        <f:if condition="{year}">
+            <h2>{year}</h2>
+        </f:if>
+        <f:for each="{pubsGrouped}" as="pub" iteration="i">
+            <div class="publication {f:if(condition:i.isOdd, then:'odd', else:'even')}">
+                <dfki:publication pub="{pub}" link="render"/>
+            </div>
+        </f:for>
+        <br/>
+    </f:groupedFor>
+</div>

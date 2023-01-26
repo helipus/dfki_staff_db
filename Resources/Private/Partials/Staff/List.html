@@ -1,0 +1,53 @@
+
+
+<table class="tx_dfkistaffdb contenttable-3" >
+  <thead>
+    <tr> 
+      <th class="col1"><f:translate key="tx_dfki_staff_db_list.name" /></th>
+      <th class="col2"><f:translate key="tx_dfki_staff_db_list.organisation" /></th>
+      <th class="col2"><f:translate key="tx_dfki_staff_db_list.bereich" /></th>
+      <th class="col3 hideformobile"><f:translate key="tx_dfki_staff_db_list.location" /></th>
+      <th class="col4 hideformobile"><f:translate key="tx_dfki_staff_db_list.phone" /></th>
+      <th class="col5 hideformobile"><f:translate key="tx_dfki_staff_db_list.mail" /></th>
+    </tr>
+  </thead>
+  <tbody>
+  	<f:for each="{staffs}" as="staff">
+    	<tr>
+        <td class="name">
+          <f:link.action action="show" pageUid="{settings.detailPid}" arguments="{uid : staff.uid}">
+            {staff.name}, {staff.firstname}
+            <f:if condition="{staff.title_long}">
+              <i>({staff.title_long})</i>
+            </f:if> 
+          </f:link.action>
+        </td>
+        <td class="organisation">
+          <f:format.html parseFuncTSPath="">{staff.organisation}</f:format.html>  
+        </td>
+        <td class="bereich">
+          <f:format.html parseFuncTSPath="">{staff.bereich}</f:format.html>  
+        </td>        
+        <td class="hideformobile">
+          {staff.location}
+        </td>      
+        <td class="phone hideformobile">
+          <f:if condition="{staff.phone}">
+            <f:then>
+              {staff.phone}
+            </f:then>
+          </f:if>      
+        </td>
+        <td class="mail hideformobile">
+          <f:if condition="{staff.mail}">
+            <f:then>              
+              <f:link.email email="{staff.mail}">
+                <i class="icon-mail"></i>
+              </f:link.email>             
+            </f:then>
+          </f:if>      
+        </td>      
+  		</tr>
+  	</f:for>
+  </tbody>
+</table>

@@ -1,0 +1,50 @@
+{namespace dfki=DFKI\DfkiStaffDb\ViewHelpers}
+
+<div class="tx-dfki-staff-db-publication-show">
+    {publication.title}
+
+    <dfki:publication pub="{publication}" link="none"/>
+
+
+    <br/>
+
+    <f:if condition="{publication.abstract}">
+        <h4 class="abstract">
+            <f:translate key="tx_dfki_staff_db_publication_show.abstract"/>
+            :
+        </h4>
+        {publication.abstract}
+    </f:if>
+
+    <br/><br/>
+    <f:if condition="{publication.keywords}">
+        <h4 class="keywords">
+            <f:translate key="tx_dfki_staff_db_publication_show.keywords"/>
+            :
+        </h4>
+        {publication.keywords}
+    </f:if>
+    
+    
+    
+    <f:if condition="<f:count subject='{publicationFiles}' /> > 0">
+      <br/><br/><h4>Files:</h4>        
+      <f:for each="{publicationFiles}" as="publicationFile" iteration="itFile">                 
+          <f:link.external uri="https://www.dfki.de/fileadmin/user_upload/import/{publicationFile.pubid}_{dfki:stripSpecialCharacter(file:publicationFile.name)}" target="_blank">
+            {dfki:stripSpecialCharacter(file:publicationFile.name)}{f:if(condition:itFile.isLast, then:'', else:'<br/> ')}
+          </f:link.external>                             
+      </f:for>
+    </f:if>
+    
+    
+    <f:if condition="<f:count subject='{publicationLinks}' /> > 0">    
+      <br/><br/><h4>Links:</h4>        
+      <f:for each="{publicationLinks}" as="publicationLink" iteration="itLink">
+          <f:link.external uri="{publicationLink.name}" target="_blank">
+            <f:format.html parseFuncTSPath="">{publicationLink.name}</f:format.html>{f:if(condition:itFile.isLast, then:'', else:'<br/> ')}
+          </f:link.external>                     
+      </f:for> 
+    </f:if>   
+
+</div>
+

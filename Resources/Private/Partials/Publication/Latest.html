@@ -1,0 +1,9 @@
+{namespace dfki=DFKI\DfkiStaffDb\ViewHelpers}
+               
+<div class="publications">
+    <f:for each="{publications}" as="pub" iteration="i">
+        <div class="publication {f:if(condition:i.isOdd, then:'odd', else:'even')}">
+            <dfki:publication pub="{pub}" link="render"/>
+        </div>
+    </f:for>
+</div>

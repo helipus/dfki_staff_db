@@ -1,0 +1,91 @@
+{namespace dfki=DFKI\DfkiStaffDb\ViewHelpers}
+<!--suppress ALL -->
+
+
+
+<f:for each="{staffs}" as="staff" iteration="i">
+
+<f:comment>Umschließender Anfangs-Tag pro Projekt:</f:comment>
+<f:if condition="{i.isOdd}">
+  <f:then>
+    <div class="row"><div class="sixcol">
+  </f:then>
+  <f:else>
+    <div class="sixcol last">
+  </f:else>
+</f:if>
+
+
+
+      <f:comment>Visitenkarte Bild links, Kontaktdaten rechts (25%, 75%)</f:comment>
+      <div class="row">
+        <div class="threecol">
+          <f:link.action action="show" pageUid="{settings.detailPid}" arguments="{uid : staff.uid}">
+            <f:if condition="{dfki:fileExists(file: 'uploads/tx_dfkistaffdb/80x120/{staff.uid}.jpg')}">
+              <f:then>
+                <img src="/uploads/tx_dfkistaffdb/80x120/{staff.uid}.jpg" alt="{f:if(condition: '{staff.title_long}', then: '{staff.title_long} ', else: '')} {staff.firstname} {staff.name}" />
+              </f:then>
+              <f:else>
+                <img src="/uploads/tx_dfkistaffdb/80x120/dummy.jpg" alt ="Dummy Foto" />
+              </f:else>
+            </f:if>
+          </f:link.action>
+        </div>
+        <div class="ninecol last">
+
+
+          <div class="name">
+            <f:link.action action="show" pageUid="{settings.detailPid}" arguments="{uid : staff.uid}">
+              {staff.name}, {staff.firstname}
+              <f:if condition="{staff.title_long}">
+                <i>({staff.title_long})</i>
+              </f:if>
+            </f:link.action>
+          </div>
+          <div class="organisation">
+            <f:format.html parseFuncTSPath="">{staff.organisationLong}</f:format.html>
+          </div>
+          <div class="bereich">
+            <f:format.html parseFuncTSPath="">{staff.bereich}</f:format.html>
+          </div>
+          <div class="phone">
+            <f:if condition="{staff.phone}">
+              <f:then>
+                {staff.phone}
+              </f:then>
+            </f:if>
+          </div>
+          <div class="mail">
+            <f:if condition="{staff.mail}">
+              <f:then>
+                <f:link.email email="{staff.mail}">
+                  {staff.mail}
+                </f:link.email>
+              </f:then>
+            </f:if>
+          </div>
+        </div>
+      </div>
+
+<f:comment>Umschließender End-Tag pro Projekt fürs Zeilenende:</f:comment>
+<f:if condition="{i.isOdd}">
+  <f:then>
+    </div> <f:comment>row</f:comment>
+  </f:then>
+</f:if>
+
+
+<f:comment>Falls ungerade viele Elemente vorhanden sind, ein leeres hinzufügen:</f:comment>
+<f:if condition="{0:1, 1:1} == {0:i.isOdd, 1:i.isLast}">
+  <f:then>
+    <div class="sixcol last">&nbsp;</div></div>
+  </f:then>
+</f:if>
+<f:if condition="{i.isEven}">
+  <f:then>
+    </div></div>
+  </f:then>
+</f:if>
+
+
+</f:for>

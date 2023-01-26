@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the dfki_staff_db extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+    <languageKey index="default" type="array">
+	  <label index="tx_dfki_staff_db_list.header">Staff Listview</label>
+      <label index="tx_dfki_staff_db_list2.header">Staff Detailview</label>
+      <label index="tx_dfki_staff_db_thumbs.header">Staff Thumbnailview</label>
+      <label index="tx_dfki_staff_db_list.header.staffDirector">Director</label>
+      <label index="tx_dfki_staff_db_list.header.staffEmployees">Staff</label>
+      <label index="tx_dfki_staff_db_list.header.staffAssistants">Research Assistants, Assistants</label>      
+      <label index="tx_dfki_staff_db_list.header.staffGuestResearchers">Guest Researcher</label>
+      <label index="tx_dfki_staff_db_list.header.staffInterns">Interns</label>
+      <label index="tx_dfki_staff_db_list.header.staffTrainees">Apprentice</label>
+      <label index="tx_dfki_staff_db_list.name">Name</label>
+      <label index="tx_dfki_staff_db_list.organisation">Company</label>
+      <label index="tx_dfki_staff_db_list.bereich">Group</label>
+      <label index="tx_dfki_staff_db_list.location">Location</label>
+      <label index="tx_dfki_staff_db_list.phone">Phone</label>
+      <label index="tx_dfki_staff_db_list.mail">Email</label>
+      <label index="tx_dfki_staff_db_show.organisation">Organization</label>
+      <label index="tx_dfki_staff_db_show.orgaunit">Area</label>
+      <label index="tx_dfki_staff_db_show.orgaunits">Areas</label>
+      <label index="tx_dfki_staff_db_show.status">Status</label>
+      <label index="tx_dfki_staff_db_show.status.1">Staffmember</label>
+      <label index="tx_dfki_staff_db_show.status.2">Guest</label>
+      <label index="tx_dfki_staff_db_show.status.3">Head of</label>
+      <label index="tx_dfki_staff_db_show.status.4">Student Assistant</label>
+      <label index="tx_dfki_staff_db_show.status.5">Secretary</label>
+      <label index="tx_dfki_staff_db_show.status.6">Staffmember</label>
+      <label index="tx_dfki_staff_db_show.status.special.1">Research Administrative Manager</label>
+      <label index="tx_dfki_staff_db_show.address">Address</label>
+      <label index="tx_dfki_staff_db_show.letteraddress">Postal Address</label>
+      <label index="tx_dfki_staff_db_show.room">Room</label>
+      <label index="tx_dfki_staff_db_show.phone">Phone</label>
+      <label index="tx_dfki_staff_db_show.fax">Fax</label>
+      <label index="tx_dfki_staff_db_show.skype">Skype</label>
+      <label index="tx_dfki_staff_db_show.mail">Email</label>
+      <label index="tx_dfki_staff_db_show.homepage">Homepage</label>
+      <label index="tx_dfki_staff_db_show.cv.download">Download PDF</label>
+      <label index="tx_dfki_staff_db_show.cv">Curriculum Vitae</label>
+      <label index="tx_dfki_staff_db_show.header.publication">Publications</label>
+      <label index="tx_dfki_staff_db_show.backlink">Back to the staff overview</label>
+      <label index="tx_dfki_staff_db_publication_list.header">Publications</label>
+      <label index="tx_dfki_staff_db_publication_show.keywords">Keywords</label>
+      <label index="tx_dfki_staff_db_publication_show.abstract">Abstract</label>
+      <label index="ff.orgaunit">Comma seperated List of Orgaunits (myDFKI) which should be shown (Default: 22)</label>
+      <label index="ff.limit">Max. number of results for publication latest-view (Default: -1)</label>
+      <label index="ff.detailPid">PageId for single staff display</label>
+      <label index="ff.function">Choose function</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+	  <label index="tx_dfki_staff_db_list.header">Mitarbeiter Listenansicht</label>
+      <label index="tx_dfki_staff_db_list2.header">Mitarbeiter Detailansicht</label>
+      <label index="tx_dfki_staff_db_thumbs.header">Mitarbeiter Miniaturbildansicht</label>
+      <label index="tx_dfki_staff_db_list.header.staffDirector">Leitung</label>
+      <label index="tx_dfki_staff_db_list.header.staffEmployees">Mitarbeiter</label>
+      <label index="tx_dfki_staff_db_list.header.staffAssistants">Wissenschaftliche Hilfskräfte, Aushilfen</label>
+      <label index="tx_dfki_staff_db_list.header.staffGuestResearchers">Gastwissenschaftler</label>
+      <label index="tx_dfki_staff_db_list.header.staffInterns">Praktikanten</label>
+      <label index="tx_dfki_staff_db_list.header.staffTrainees">Auszubildene</label>
+      <label index="tx_dfki_staff_db_list.name">Name</label>
+      <label index="tx_dfki_staff_db_list.organisation">Firma</label>
+      <label index="tx_dfki_staff_db_list.bereich">Gruppe</label>
+      <label index="tx_dfki_staff_db_list.location">Standort</label>
+      <label index="tx_dfki_staff_db_list.phone">Telefon</label>
+      <label index="tx_dfki_staff_db_list.mail">E-Mail</label> 
+      <label index="tx_dfki_staff_db_show.organisation">Organisation</label>
+      <label index="tx_dfki_staff_db_show.orgaunit">Bereich</label>
+      <label index="tx_dfki_staff_db_show.orgaunits">Bereiche</label>
+      <label index="tx_dfki_staff_db_show.status">Status</label>
+      <label index="tx_dfki_staff_db_show.status.1">Mitarbeiter</label>
+      <label index="tx_dfki_staff_db_show.status.2">Gast</label>
+      <label index="tx_dfki_staff_db_show.status.3">Leitung</label>
+      <label index="tx_dfki_staff_db_show.status.4">Wissenschaftliche Hilfskraft</label>
+      <label index="tx_dfki_staff_db_show.status.5">Sekretariat</label>
+      <label index="tx_dfki_staff_db_show.status.6">Mitarbeiter</label>
+      <label index="tx_dfki_staff_db_show.status.special.1">Forschungsbereichsmanager</label>
+      <label index="tx_dfki_staff_db_show.address">Adresse</label>
+      <label index="tx_dfki_staff_db_show.letteraddress">Briefadresse</label>
+      <label index="tx_dfki_staff_db_show.room">Raumnr.</label>
+      <label index="tx_dfki_staff_db_show.phone">Telefon</label>
+      <label index="tx_dfki_staff_db_show.fax">Fax</label>
+      <label index="tx_dfki_staff_db_show.skype">Skype</label>
+      <label index="tx_dfki_staff_db_show.mail">E-Mail</label>
+      <label index="tx_dfki_staff_db_show.homepage">Webseite</label>
+      <label index="tx_dfki_staff_db_show.cv">Lebenslauf</label>
+      <label index="tx_dfki_staff_db_show.cv.download">PDF-Download</label>
+      <label index="tx_dfki_staff_db_show.header.publication">Publikationen</label>
+      <label index="tx_dfki_staff_db_show.backlink">Zurück zur Mitarbeiterübersicht</label>
+      <label index="tx_dfki_staff_db_publication_list.header">Publikationen</label>
+      <label index="tx_dfki_staff_db_publication_show.keywords">Stichworte</label>
+      <label index="tx_dfki_staff_db_publication_show.abstract">Zusammenfassung (Abstract)</label>
+      <label index="ff.orgaunit">Kommagetrennte Liste von Orgaunits (myDFKI) welche angezeigt werden sollen 22=RIC, 34=ISG, 54=A&amp;D (Default: 22) </label>
+      <label index="ff.limit">Max. Anzahl an Ergebnissen für Publication Latest-Ansicht (Standard: -1)</label>
+      <label index="ff.detailPid">SeitenId für die Einzelansicht eines Mitarbeiters</label>
+      <label index="ff.function">Funktion auswählen</label>                       			
+		</languageKey>
+	</data>
+</T3locallang>

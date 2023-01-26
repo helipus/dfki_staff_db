@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'dfki_staff_db'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+            
+			<label index="tx_dfkistaffdb_domain_model_test">Test</label>
+			<label index="tx_dfkistaffdb_domain_model_test.test1">Test1</label>
+			<label index="tx_dfkistaffdb_domain_model_test.test2">Test2</label>
+
+		</languageKey>
+	</data>
+</T3locallang>

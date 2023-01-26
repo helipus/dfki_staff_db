@@ -1,0 +1,31 @@
+{namespace dfki=DFKI\DfkiStaffDb\ViewHelpers}
+
+<!--suppress ALL -->
+
+
+
+
+
+<f:for each="{staffs}" as="staff" iteration="i">
+
+    <div class="thumbnail">
+        <div class="foto">
+            <f:link.action action="show" pageUid="{settings.detailPid}" arguments="{uid : staff.uid}">
+                <f:if condition="{dfki:fileExists(file: 'uploads/tx_dfkistaffdb/80x120/{staff.uid}.jpg')}">
+                    <f:then>
+                        <img src="/uploads/tx_dfkistaffdb/80x120/{staff.uid}.jpg" alt="{f:if(condition: '{staff.title_long}', then: '{staff.title_long} ', else: '')} {staff.firstname} {staff.name}" />
+                    </f:then>
+                    <f:else>
+                        <img src="/uploads/tx_dfkistaffdb/80x120/dummy.jpg" alt="Dummy Foto" />
+                    </f:else>
+                </f:if>
+            </f:link.action>
+        </div>
+        <div class="name">
+            <f:link.action action="show" pageUid="{settings.detailPid}" arguments="{uid : staff.uid}">
+                <f:format.html parseFuncTSPath="">{staff.name}, {staff.firstname} ({staff.organisation}, {staff.bereich})</f:format.html>
+            </f:link.action>
+        </div>
+    </div>
+
+</f:for>

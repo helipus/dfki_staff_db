@@ -1,0 +1,108 @@
+<T3DataStructure>
+ <sheets>
+  <sDEF>
+   <ROOT>
+     <TCEforms>
+      <sheetTitle>Funktion</sheetTitle>
+     </TCEforms>
+     <type>array</type>
+     <el>
+      <switchableControllerActions>
+       <TCEforms>
+         <label>LLL:EXT:dfki_staff_db/Resources/Private/Language/locallang.xml:ff.function</label>
+         <config>
+          <type>select</type>
+          <items>
+            
+            <numIndex index="0">
+             <numIndex index="0">Mitarbeiter Listenansicht (einfach)</numIndex>
+             <numIndex index="1">Staff->list;Staff->show</numIndex>
+            </numIndex>
+            <numIndex index="1">
+             <numIndex index="0">Mitarbeiter Listenansicht (mit Fotos)</numIndex>
+             <numIndex index="1">Staff->list2;Staff->show</numIndex>
+            </numIndex>
+            <numIndex index="2">
+             <numIndex index="0">Mitarbeiter Thumbnailansicht (nur Fotos)</numIndex>
+             <numIndex index="1">Staff->thumbs;Staff->show</numIndex>
+            </numIndex>
+            <numIndex index="3">
+             <numIndex index="0">Mitarbeiter Single-Ansicht</numIndex>
+             <numIndex index="1">Staff->show</numIndex>
+            </numIndex>                                    
+            <numIndex index="4">
+             <numIndex index="0">Publikationen Listen-Ansicht</numIndex>
+             <numIndex index="1">Publication->list;Publication->show</numIndex>
+            </numIndex>            
+            <numIndex index="5">
+             <numIndex index="0">Publikationen Latest-Ansicht</numIndex>
+             <numIndex index="1">Publication->latest;Publication->show</numIndex>
+            </numIndex>
+            <numIndex index="6">
+             <numIndex index="0">Publikationen Single-Ansicht</numIndex>
+             <numIndex index="1">Publication->show</numIndex>
+            </numIndex>                   
+           </items>
+         </config>
+       </TCEforms>
+      </switchableControllerActions>
+      
+      <settings.ff.orgaunit>
+            <TCEforms>
+                <exclude>1</exclude>
+                <label>LLL:EXT:dfki_staff_db/Resources/Private/Language/locallang.xml:ff.orgaunit</label>
+                <config>
+                    <type>input</type>
+                    <eval>string</eval>
+                    <size>5</size>
+                    <default>22</default>
+                    <checkbox>0</checkbox>
+                </config>
+            </TCEforms>
+      </settings.ff.orgaunit> 
+
+
+      <settings.ff.limit>
+            <TCEforms>
+                <exclude>1</exclude>
+                <label>LLL:EXT:dfki_staff_db/Resources/Private/Language/locallang.xml:ff.limit</label>
+                <config>
+                    <type>input</type>
+                    <eval>int</eval>
+                    <size>5</size>
+                    <default>5</default>
+                    <checkbox>0</checkbox>
+                </config>
+            </TCEforms>
+      </settings.ff.limit>      
+      
+    <!-- PID Single Page -->
+    <settings.detailPid>
+    <TCEforms>
+    	<label>LLL:EXT:dfki_staff_db/Resources/Private/Language/locallang.xml:ff.detailPid</label>
+    	<config>
+    		<type>group</type>
+    		<internal_type>db</internal_type>
+    		<allowed>pages</allowed>
+    		<size>1</size>
+    		<maxitems>1</maxitems>
+    		<minitems>0</minitems>
+    		<show_thumbs>1</show_thumbs>
+    		<wizards>
+    			<suggest>
+    				<type>suggest</type>
+    				<default>
+    					<searchWholePhrase>1</searchWholePhrase>
+    				</default>
+    			</suggest>
+    		</wizards>
+    	</config>
+    </TCEforms>
+    </settings.detailPid>
+      
+      
+     </el>
+   </ROOT>
+  </sDEF>
+ </sheets>
+</T3DataStructure>
